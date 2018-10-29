@@ -38,8 +38,8 @@ public class Earth : MonoBehaviour {
 
     void Position()
     {
-        orbitalAngle = orbitalAngle + 360/(orbitalPeriod*framerate);
-        positionVector = new Vector3(orbitalRadius*Mathf.Sin(orbitalAngle*(2*Mathf.PI)/360),0, orbitalRadius * Mathf.Cos(orbitalAngle*(2 * Mathf.PI) / 360));
+        orbitalAngle = orbitalAngle - 360/(orbitalPeriod*framerate);
+        positionVector = new Vector3(orbitalRadius*Mathf.Sin(orbitalAngle*(2*Mathf.PI)/360),0,orbitalRadius * Mathf.Cos(orbitalAngle*(2 * Mathf.PI) / 360));
         transform.position = positionVector;
     }
 
@@ -53,7 +53,7 @@ public class Earth : MonoBehaviour {
         {
             deltaRotation = 360 / (siderealPeriod * framerate);
         }
-        rotationVector = rotationVector + new Vector3(0, +deltaRotation, 0);
+        rotationVector = rotationVector + new Vector3(0, -deltaRotation, 0);
         transform.eulerAngles = rotationVector;
     }
 }

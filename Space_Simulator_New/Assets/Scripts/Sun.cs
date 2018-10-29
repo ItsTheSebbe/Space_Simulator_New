@@ -31,7 +31,7 @@ public class Sun : MonoBehaviour {
         {
             deltaRotation = 360 / (siderealPeriod * framerate);
         }
-        rotationVector = new Vector3(0, +deltaRotation, 0);
+        rotationVector = new Vector3(0, -deltaRotation, 0);
         gameObject.transform.Rotate(rotationVector);
     }
 }

@@ -41,7 +41,7 @@ public class Moon : MonoBehaviour {
     void Position()
     {
         positionEarth=GameObject.Find("Earth").GetComponent<Earth>().positionVector;
-        orbitalAngle = orbitalAngle + 360 / (orbitalPeriod * framerate);
+        orbitalAngle = orbitalAngle - 360 / (orbitalPeriod * framerate);
         positionEarthToMoon = new Vector3(orbitalRadius * Mathf.Sin(orbitalAngle * (2 * Mathf.PI) / 360), 0, orbitalRadius * Mathf.Cos(orbitalAngle * (2 * Mathf.PI) / 360));
         positionVector = positionEarth + positionEarthToMoon;
         transform.position = positionVector;
@@ -57,7 +57,7 @@ public class Moon : MonoBehaviour {
         {
             deltaRotation = 360 / (siderealPeriod * framerate);
         }
-        rotationVector = rotationVector + new Vector3(0, +deltaRotation, 0);
+        rotationVector = rotationVector + new Vector3(0, -deltaRotation, 0);
         transform.eulerAngles = rotationVector;
     }
 }
