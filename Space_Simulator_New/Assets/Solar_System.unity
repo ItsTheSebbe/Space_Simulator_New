@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   siderealPeriod: 0
-  orbitalPeriod: 0
+  orbitalPeriod: 1
   orbitalRadius: 1
   radius: 0.3
 --- !u!23 &1599821947
